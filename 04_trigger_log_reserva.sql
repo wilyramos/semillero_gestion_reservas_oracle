@@ -1,10 +1,8 @@
-create or replace trigger trg_log_reserva after
-   insert on reserva
-   for each row
-begin
-   insert into log_reserva values ( log_reserva_seq.nextval,
-                                    :new.id_reserva,
-                                    sysdate,
-                                    'Reserva creada' );
-end;
+CREATE OR REPLACE TRIGGER trg_log_reserva_ai
+AFTER INSERT ON reserva
+FOR EACH ROW
+BEGIN
+    INSERT INTO log_reserva (id_log, id_reserva, fecha_evento, descripcion)
+    VALUES (seq_log_reserva.NEXTVAL, :NEW.id_reserva, SYSDATE, 'Reserva creada exitosamente');
+END;
 /
