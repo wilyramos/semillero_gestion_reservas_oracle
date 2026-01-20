@@ -1,5 +1,6 @@
 -- Borrado previo para limpieza tambien de indices y secuencias
 -- eLIMINTAR TODA LA DB
+DROP TRIGGER trg_log_reserva_ai;
 DROP SEQUENCE seq_rol;
 DROP SEQUENCE seq_usuario;
 DROP SEQUENCE seq_usuario_rol;

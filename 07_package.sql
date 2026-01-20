@@ -11,6 +11,7 @@ CREATE OR REPLACE PACKAGE RESERVAS.pkg_reservas AS
         p_id_usuario    IN NUMBER,
         p_fecha_inicio  IN DATE,
         p_fecha_fin     IN DATE,
+        p_id_reserva     OUT NUMBER,
         p_codigo_salida OUT NUMBER,
         p_mensaje_salida OUT VARCHAR2
     );
@@ -28,6 +29,8 @@ CREATE OR REPLACE PACKAGE RESERVAS.pkg_reservas AS
     );
 
 END pkg_reservas;
+
+/
 
 CREATE OR REPLACE PACKAGE BODY RESERVAS.pkg_reservas AS
 
@@ -59,6 +62,7 @@ CREATE OR REPLACE PACKAGE BODY RESERVAS.pkg_reservas AS
         p_id_usuario    IN NUMBER,
         p_fecha_inicio  IN DATE,
         p_fecha_fin     IN DATE,
+        p_id_reserva     OUT NUMBER, -- Se agregó
         p_codigo_salida OUT NUMBER,     
         p_mensaje_salida OUT VARCHAR2   
     ) IS
@@ -113,13 +117,14 @@ CREATE OR REPLACE PACKAGE BODY RESERVAS.pkg_reservas AS
             p_fecha_inicio,
             p_fecha_fin,
             'ACTIVA'
-        );
+        ) RETURNING id_reserva INTO p_id_reserva; -- Para capturar el ID generado
 
         COMMIT;
 
     EXCEPTION
         WHEN OTHERS THEN
             ROLLBACK;
+            p_id_reserva := NULL; -- En caso de error, no se asigna ID
             p_codigo_salida := 99;
             p_mensaje_salida := 'Error: ' || SQLERRM;
     END pr_crear_reserva;
@@ -205,3 +210,5 @@ CREATE OR REPLACE PACKAGE BODY RESERVAS.pkg_reservas AS
     END pr_cambiar_estado;
 
 END pkg_reservas;
+
+/

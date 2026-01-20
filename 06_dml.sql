@@ -3,6 +3,9 @@ INSERT INTO rol (id_rol, nombre_rol)
 VALUES (seq_rol.NEXTVAL, 'ROLE_ADMIN');
 
 INSERT INTO rol (id_rol, nombre_rol) 
+VALUES (seq_rol.NEXTVAL, 'ADMIN');
+
+INSERT INTO rol (id_rol, nombre_rol) 
 VALUES (seq_rol.NEXTVAL, 'ROLE_USER');
 
 -- 2. INSERTAR USUARIOS 
@@ -71,3 +74,6 @@ UPDATE usuario
 SET password = '$2a$10$.5lXX3HzP2GXD.z3pMp7HOXeIAiYPTYWon.dIRnaJv6.OVNzaokI6';
 
 COMMIT;
+
+select * from log_reserva;
+select * from log_cancelacion;
