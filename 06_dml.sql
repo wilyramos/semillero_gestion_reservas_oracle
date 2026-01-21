@@ -77,3 +77,155 @@ COMMIT;
 
 select * from log_reserva;
 select * from log_cancelacion;
+
+-- Cancelar todas las reservas
+UPDATE reserva
+SET estado = 'CANCELADA'
+WHERE estado = 'ACTIVA';
+
+
+/
+
+-- SEMANA 1: DEL 1 AL 2 DE ENERO (JUEVES Y VIERNES)
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('01-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('01-01-2026 09:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 11:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('01-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('01-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('01-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('01-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('01-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('02-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('02-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('02-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('02-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('02-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('02-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: DEL 5 AL 9 DE ENERO
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('05-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('05-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('05-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('05-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('05-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('06-01-2026 09:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 11:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('06-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('06-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('06-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('06-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('07-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('07-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('07-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('07-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('07-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('08-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('08-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('08-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('08-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('09-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('09-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('09-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('09-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 3: DEL 12 AL 16 DE ENERO
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('12-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('12-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('12-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('12-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('13-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('13-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('13-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('13-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('14-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('14-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('14-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('15-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('15-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('15-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 19:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('16-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('16-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+COMMIT;
+
+
+/
+
+
+-- SEMANA 1: SIMULTANEIDAD TOTAL
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('05-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('05-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('05-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('05-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('05-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('05-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('05-01-2026 18:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 1: MARTES 06
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('06-01-2026 08:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('06-01-2026 08:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 10:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('06-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('06-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('06-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 1: MIÉRCOLES 07
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('07-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('07-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('07-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('07-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('07-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 1: JUEVES 08
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('08-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('08-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('08-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('08-01-2026 15:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('08-01-2026 17:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 1: VIERNES 09
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('09-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('09-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('09-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: LUNES 12
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('12-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('12-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('12-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('12-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('12-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('12-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('12-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: MARTES 13
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('13-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('13-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('13-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('13-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('13-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: MIÉRCOLES 14
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('14-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('14-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('14-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('14-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('14-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: JUEVES 15
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('15-01-2026 08:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 10:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('15-01-2026 08:30:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 10:30:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 2, TO_DATE('15-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 1, TO_DATE('15-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('15-01-2026 13:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- SEMANA 2: VIERNES 16
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('16-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('16-01-2026 10:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('16-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('16-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('16-01-2026 16:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+-- EXTRAS PARA LLEGAR A 50
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('19-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('19-01-2026 09:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 11:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('19-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('19-01-2026 12:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 14:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 1, 1, TO_DATE('19-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+INSERT INTO reserva (id_reserva, id_sala, id_usuario, fecha_inicio, fecha_fin, estado) VALUES (seq_reserva.NEXTVAL, 2, 2, TO_DATE('19-01-2026 15:00:00', 'DD-MM-YYYY HH24:MI:SS'), TO_DATE('19-01-2026 17:00:00', 'DD-MM-YYYY HH24:MI:SS'), 'ACTIVA');
+
+COMMIT;
