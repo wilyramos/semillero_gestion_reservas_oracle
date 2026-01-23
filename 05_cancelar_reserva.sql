@@ -1,3 +1,5 @@
+-- Procedimiento para cancelar una reserva y registrar en logs
+
 CREATE OR REPLACE PROCEDURE sp_cancelar_reserva (
     p_id_reserva IN NUMBER,
     p_motivo IN VARCHAR2

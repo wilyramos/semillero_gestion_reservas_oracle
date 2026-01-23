@@ -1,3 +1,5 @@
+-- Creacion de secuencias para las tablas
+
 CREATE SEQUENCE seq_rol START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_usuario START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE seq_usuario_rol START WITH 1 INCREMENT BY 1;

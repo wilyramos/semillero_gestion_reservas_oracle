@@ -1,28 +1,13 @@
 -- Borrado previo para limpieza tambien de indices y secuencias
--- eLIMINTAR TODA LA DB
-DROP TRIGGER trg_log_reserva_ai;
-DROP SEQUENCE seq_rol;
-DROP SEQUENCE seq_usuario;
-DROP SEQUENCE seq_usuario_rol;
-DROP SEQUENCE seq_sala;
-DROP SEQUENCE seq_reserva;
-DROP SEQUENCE seq_log_reserva;
-DROP SEQUENCE seq_log_cancelacion;
-TRUNCATE TABLE log_cancelacion;
-TRUNCATE TABLE log_reserva;
-TRUNCATE TABLE reserva;
-TRUNCATE TABLE sala;
-TRUNCATE TABLE usuario_rol;
-TRUNCATE TABLE usuario;
-TRUNCATE TABLE rol;
--- 1. ROL
+
+-- ROL
 CREATE TABLE rol (
     id_rol      NUMBER NOT NULL,
     nombre_rol  VARCHAR2(20) NOT NULL UNIQUE,
     CONSTRAINT pk_rol PRIMARY KEY (id_rol)
 );
 
--- 2. USUARIO
+-- USUARIO
 CREATE TABLE usuario (
     id_usuario  NUMBER NOT NULL,
     username    VARCHAR2(50) NOT NULL UNIQUE,
@@ -30,7 +15,7 @@ CREATE TABLE usuario (
     CONSTRAINT pk_usuario PRIMARY KEY (id_usuario)
 );
 
--- 3. USUARIO_ROL
+-- USUARIO_ROL
 CREATE TABLE usuario_rol (
     id_usuario_rol NUMBER NOT NULL,
     id_usuario     NUMBER NOT NULL,
@@ -41,7 +26,7 @@ CREATE TABLE usuario_rol (
 );
 
 
--- 4. SALA
+-- SALA
 CREATE TABLE sala (
     id_sala    NUMBER NOT NULL,
     nombre     VARCHAR2(100) NOT NULL UNIQUE,
@@ -51,7 +36,7 @@ CREATE TABLE sala (
     CONSTRAINT ck_sala_capacidad CHECK (capacidad > 0)
 );
 
--- 5. RESERVA
+-- RESERVA
 CREATE TABLE reserva (
     id_reserva    NUMBER NOT NULL,
     id_sala       NUMBER NOT NULL,
@@ -70,7 +55,7 @@ CREATE TABLE reserva (
 CREATE INDEX idx_reserva_fecha ON reserva(fecha_inicio);
 CREATE INDEX idx_reserva_usuario ON reserva(id_usuario);
 
--- 6. LOG_RESERVA
+-- LOG_RESERVA
 CREATE TABLE log_reserva (
     id_log        NUMBER NOT NULL,
     id_reserva    NUMBER NOT NULL,
@@ -81,7 +66,7 @@ CREATE TABLE log_reserva (
     CONSTRAINT fk_log_reserva_reserva FOREIGN KEY (id_reserva) REFERENCES reserva (id_reserva)
 );
 
--- 7. LOG_CANCELACION
+-- LOG_CANCELACION
 CREATE TABLE log_cancelacion (
     id_log             NUMBER NOT NULL,
     id_reserva         NUMBER NOT NULL,

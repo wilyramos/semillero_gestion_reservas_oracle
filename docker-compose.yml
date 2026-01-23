@@ -3,7 +3,7 @@ services:
     image: gvenzl/oracle-free:latest
     container_name: oracle_reservas
     ports:
-      - "1524:1521"
+      - "1521:1521"
     environment:
       - ORACLE_DATABASE=reservas_db
       - ORACLE_PASSWORD=oracle

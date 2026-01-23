@@ -1,3 +1,7 @@
+-- PACKAGE DE RESERVAS que contiene: funciones para validar disponibilidad,
+-- procedimientos para crear y cancelar reservas, y cambiar estado de reserva
+
+
 CREATE OR REPLACE PACKAGE RESERVAS.pkg_reservas AS
 
     FUNCTION fn_sala_disponible (

@@ -1,3 +1,5 @@
+-- Trigger para registrar en log_reserva después de una inserción en reserva
+
 CREATE OR REPLACE TRIGGER trg_log_reserva_ai
 AFTER INSERT ON reserva
 FOR EACH ROW

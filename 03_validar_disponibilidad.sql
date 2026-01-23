@@ -1,3 +1,5 @@
+-- Procedimiento para crear una reserva validando la disponibilidad de la sala
+
 CREATE OR REPLACE PROCEDURE sp_crear_reserva (
     p_id_sala IN NUMBER,
     p_id_usuario IN NUMBER,
